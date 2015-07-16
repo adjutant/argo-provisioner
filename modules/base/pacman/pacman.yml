@@ -1,0 +1,23 @@
+- name: Ensure /etc/pacman.d/localmirror is correct
+  action: copy src={{ ansibledir }}/config/common/base/pacman/localmirror dest=/etc/pacman.d/localmirror owner=root group=root mode=0644
+
+- name: Ensure /etc/pacman.d/mirrorlist is correct
+  action: copy src={{ ansibledir }}/config/common/base/pacman/mirrorlist dest=/etc/pacman.d/mirrorlist owner=root group=root mode=0644
+
+- name: Install ArchLinux keyrings
+  action: pacman name="{{ item }}" state=latest update_cache=yes
+  with_items:
+    - archlinuxarm-keyring 
+    - archlinux-keyring
+
+- name: Ensure /etc/pacman.conf is correct
+  action: copy src={{ ansibledir }}/config/common/base/pacman/pacman.conf dest=/etc/pacman.conf owner=root group=root mode=0644
+
+- name: Init pacman keyring
+  action: command pacman-key --init
+
+- name: Init pacman keyring
+  action: command pacman-key --populate archlinuxarm
+
+- name: Update pacman dabatase
+  action: command pacman -Syy

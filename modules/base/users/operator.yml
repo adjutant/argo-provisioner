@@ -1,0 +1,16 @@
+- name: Create account operator - Group
+  action: group name=operator gid=1302 state=present
+
+- name: Create account operator - Account
+  action: user name=operator createhome=yes group=operator uid=1302 home=/home/operator shell=/bin/bash state=present
+
+- name: Create account operator - SSH public keys
+  action: authorized_key user=operator state=present key="{{ item }}"
+  with_file:
+    - "{{ ansibledir }}/config/common/base/users/pubkeys/adjutant-ssh.pub"
+
+- name: Create account operator - Set chown
+  action: command chown -Rc operator:operator /home/operator
+
+- name: Create account operator - Set chmod
+  action: command chmod -Rc go-wrx /home/operator

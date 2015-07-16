@@ -1,0 +1,6 @@
+- name: Ensure /etc/hostname is correct
+  action: template src={{ ansibledir }}/config/common/base/network/hostname dest=/etc/hostname owner=root group=root mode=0644
+
+- name: Set hostname
+  action: command hostname {{ inventory_hostname }}
+  register: hostname_status

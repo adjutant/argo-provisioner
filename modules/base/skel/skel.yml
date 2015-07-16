@@ -1,0 +1,11 @@
+- name: Purge the default /etc/skel directory
+  action: command rm -rfv /etc/skel
+
+- name: Transfer skel configuration to server
+  action: copy src={{ ansibledir }}/config/common/base/skel dest=/etc/ owner=root group=root mode=0644
+
+- name: Ensure correct permissions for /etc/skel - Step 1
+  action: shell find /etc/skel -type d -print0 | xargs -0 chmod -c 755
+
+- name: Ensure correct permissions for /etc/skel - Step 2
+  action: shell find /etc/skel -type f -print0 | xargs -0 chmod -c 644

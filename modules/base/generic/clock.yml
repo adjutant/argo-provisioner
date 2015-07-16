@@ -1,0 +1,2 @@
+- name: Ensure timezone is correct (UTC)
+  action: command ln -sf /usr/share/zoneinfo/UTC /etc/localtime

@@ -1,0 +1,12 @@
+Server = http://vn.mirror.archlinuxarm.org/$arch/$repo
+Server = http://mirror.archlinuxarm.org/$arch/$repo
+# Server = http://sg.mirror.archlinuxarm.org/$arch/$repo
+# Server = http://tw.mirror.archlinuxarm.org/$arch/$repo
+# Server = http://au.mirror.archlinuxarm.org/$arch/$repo
+# Server = http://ca.us.mirror.archlinuxarm.org/$arch/$repo
+# Server = http://co.us.mirror.archlinuxarm.org/$arch/$repo
+# Server = http://de.us.mirror.archlinuxarm.org/$arch/$repo
+# Server = http://fl.us.mirror.archlinuxarm.org/$arch/$repo
+# Server = http://ga.us.mirror.archlinuxarm.org/$arch/$repo
+# Server = http://mi.us.mirror.archlinuxarm.org/$arch/$repo
+# Server = http://va.us.mirror.archlinuxarm.org/$arch/$repo

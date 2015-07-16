@@ -1,0 +1,16 @@
+- name: Create account devops - Group
+  action: group name=devops gid=1301 state=present
+
+- name: Create account devops - Account
+  action: user name=devops createhome=yes group=devops uid=1301 home=/home/devops shell=/bin/bash state=present
+
+- name: Create account devops - SSH public keys
+  action: authorized_key user=devops state=present key="{{ item }}"
+  with_file:
+    - "{{ ansibledir }}/config/common/base/users/pubkeys/devops-ssh.pub"
+
+- name: Create account devops - Set chown
+  action: command chown -Rc devops:devops /home/devops
+
+- name: Create account devops - Set chmod
+  action: command chmod -Rc go-wrx /home/devops
