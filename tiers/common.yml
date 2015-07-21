@@ -16,7 +16,6 @@
   - include: ../modules/base/network/motd.yml
   - include: ../modules/base/network/hostname.yml
   - include: ../modules/base/pacman/pacman.yml
-  - include: ../modules/base/network/dns.yml
   - include: ../modules/base/ssh/ssh.yml
   - include: ../modules/base/sudo/sudo.yml
 
