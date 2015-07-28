@@ -8,10 +8,10 @@
   action: file state=directory owner=operator group=devops mode=0755 path=/etc/local
 
 - name: Ensure directory /var/log/local exists
-  action: file state=directory owner=operator group=devops mode=0770 path=/var/log/operation
+  action: file state=directory owner=operator group=devops mode=0770 path=/var/log/local
 
 - name: Ensure directory /tmp/src exists
-  action: file state=directory owner=operator group=devops mode=0777 path=/tmp/src
+  action: file state=directory owner=operator group=devops mode=0755 path=/tmp/src
 
 # - name: Ensure directory /srv/api exists
 #   action: file state=directory owner=operator group=devops mode=0755 path=/srv/api
