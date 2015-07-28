@@ -1,6 +1,6 @@
 [all]
-cubie-beta    ansible_ssh_host=7.7.7.102    ansible_connection=ssh ansible_ssh_user=root ansible_ssh_port=22
-# cubie-gamma   ansible_ssh_host=7.7.7.103  ansible_connection=ssh ansible_ssh_user=root ansible_ssh_port=22
-# cubie-delta   ansible_ssh_host=7.7.7.104  ansible_connection=ssh ansible_ssh_user=root ansible_ssh_port=22
-# cubie-epsilon ansible_ssh_host=7.7.7.105  ansible_connection=ssh ansible_ssh_user=root ansible_ssh_port=22
-# cubie-zeta    ansible_ssh_host=7.7.7.106  ansible_connection=ssh ansible_ssh_user=root ansible_ssh_port=22
+cubie-beta    ansible_ssh_host=7.7.7.102    ansible_connection=ssh ansible_ssh_user=root ansible_ssh_port=22 ansible_python_interpreter=/usr/bin/python2.7
+# cubie-gamma   ansible_ssh_host=7.7.7.103  ansible_connection=ssh ansible_ssh_user=root ansible_ssh_port=22 ansible_python_interpreter=/usr/bin/python2.7
+# cubie-delta   ansible_ssh_host=7.7.7.104  ansible_connection=ssh ansible_ssh_user=root ansible_ssh_port=22 ansible_python_interpreter=/usr/bin/python2.7
+# cubie-epsilon ansible_ssh_host=7.7.7.105  ansible_connection=ssh ansible_ssh_user=root ansible_ssh_port=22 ansible_python_interpreter=/usr/bin/python2.7
+# cubie-zeta    ansible_ssh_host=7.7.7.106  ansible_connection=ssh ansible_ssh_user=root ansible_ssh_port=22 ansible_python_interpreter=/usr/bin/python2.7
