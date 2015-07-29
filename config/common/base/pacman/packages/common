@@ -1,0 +1,10 @@
+archlinux-keyring archlinuxarm-keyring haveged
+
+net-tools openssh openssl iptables tcpdump mtr
+whois curl rsync traceroute wvdial ntp wget ifplugd
+
+git python2 gnupg
+bash-completion screen most mlocate ncdu
+htop lsof sysstat ltrace strace iotop
+
+gptfdisk usb_modeswitch
