@@ -7,24 +7,25 @@
 - name: Install ArchLinux keyrings
   action: pacman name=archlinuxarm-keyring state=latest update_cache=yes
 
+- name: Check for pacman.d/gnupg's existence
+  action: stat path=/etc/pacman.d/gnupg/private-keys-v1.d
+  register: pacman_gpg_status
+
 - name: Ensure /etc/pacman.conf is correct
   action: copy src={{ ansibledir }}/config/common/base/pacman/pacman.conf dest=/etc/pacman.conf owner=root group=root mode=0644
 
 - name: Init pacman keyring
   action: command pacman-key --init
+  when: pacman_gpg_status.stat.exists = False
 
 - name: Init pacman keyring
   action: command pacman-key --populate archlinuxarm
+  when: pacman_gpg_status.stat.exists = False
 
 - name: Update pacman dabatase
-  action: command pacman -Syy
+  action: pacman update_cache=yes
 
 - name: Install ArchLinux base packages
   action: pacman name="{{ item }}" state=latest update_cache=yes
   with_file:
     - "{{ ansibledir }}/config/common/base/pacman/packages/base"
-
-- name: Install ArchLinux cluster common packages
-  action: pacman name="{{ item }}" state=latest update_cache=yes
-  with_file:
-    - "{{ ansibledir }}/config/common/base/pacman/packages/common"

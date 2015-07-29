@@ -6,3 +6,12 @@ sysfsutils systemd-sysvcompat tar texinfo usbutils util-linux vi which xfsprogs
 
 autoconf automake binutils bison fakeroot file findutils flex gawk gcc gettext grep
 groff gzip libtool m4 make pacman patch pkg-config sed sudo texinfo util-linux which
+
+haveged net-tools openssh openssl iptables tcpdump mtr
+whois curl rsync traceroute wvdial ntp wget ifplugd
+
+git python2 gnupg 
+bash-completion most mlocate ncdu
+htop lsof sysstat ltrace strace iotop
+
+gptfdisk usb_modeswitch

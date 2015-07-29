@@ -1,4 +1,4 @@
-- name: Transfer locale configs
+- name: Transfer locale configuration
   action: copy src={{ ansibledir }}/config/common/base/generic/{{ item }} dest=/etc/ owner=root group=root mode=0644
   with_items:
     - locale.gen
@@ -9,12 +9,10 @@
   action: command locale-gen
   when: locale_status.changed
 
-- name: Transfer locale configs
-  action: copy src={{ ansibledir }}/config/common/base/generic/vconsole.conf dest=/etc/ owner=root group=root mode=0644
-
-- name: Transfer locale configs
+- name: Transfer etc basic configuration
   action: copy src={{ ansibledir }}/config/common/base/generic/{{ item }} dest=/etc/{{ item }} owner=root group=root mode=0644
   with_items:
+    - vconsole.conf
     - dhcpcd.conf
     - issue
     - man_db.conf
