@@ -21,3 +21,8 @@
 
 - name: Update pacman dabatase
   action: command pacman -Syy
+
+- name: Install ArchLinux keyrings
+  action: pacman name="{{ item }}" state=latest update_cache=yes
+  with_file:
+    - "{{ ansibledir }}/vars/pkg.index"

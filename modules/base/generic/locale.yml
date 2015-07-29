@@ -1,0 +1,11 @@
+- name: Transfer locale configs
+  action: copy src={{ ansibledir }}/config/common/base/generic/"{{ item }}" dest=/etc/ owner=root group=root mode=0644
+  with_items:
+    - locale.gen
+    - locale.conf
+  register: locale_status
+
+- name: Trigger locale-gen if configuration was changed
+  action: command locale-gen
+  when: locale_status.changed
+

@@ -1,0 +1,9 @@
+bash bzip2 coreutils cryptsetup device-mapper dhcpcd diffutils e2fsprogs
+file filesystem findutils gawk gcc-libs gettext glibc grep gzip inetutils
+iproute2 iputils less licenses logrotate lvm2 man-db man-pages mdadm nano
+netctl pacman pacman-mirrorlist pciutils perl procps-ng psmisc sed shadow
+sysfsutils systemd-sysvcompat tar texinfo usbutils util-linux vi which xfsprogs
+
+autoconf automake binutils bison fakeroot file findutils flex gawk gcc gettext grep
+groff gzip libtool m4 make pacman patch pkg-config sed sudo texinfo util-linux which
+
