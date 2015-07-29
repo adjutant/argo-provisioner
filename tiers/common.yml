@@ -4,6 +4,7 @@
     - ../vars/common.vars.yml
 
   tasks:
+  - include: ../modules/base/generic/swap.yml
   - include: ../modules/base/skel/skel.yml
   - include: ../modules/base/users/adjutant.yml
   - include: ../modules/base/users/devops.yml

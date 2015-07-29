@@ -4,17 +4,17 @@
 
 - name: Create swapfile (if not already existed)
   action: command dd if=/dev/urandom of=/swapfile bs=1M count=256
-  when: swap_status.stat.exists = False
+  when: swap_status.stat.exists == False
 
 - name: Format swapfile
   action: command mkswap /swapfile
-  when: swap_status.stat.exists = False
+  when: swap_status.stat.exists == False
 
 - name: Chmod swapfile to 600
   action: command chmod 600 /swapfile
-  when: swap_status.stat.exists = False
+  when: swap_status.stat.exists == False
 
 - name: Enable swap
   action: command swapon /swapfile
-  when: swap_status.stat.exists = False
+  when: swap_status.stat.exists == False
 

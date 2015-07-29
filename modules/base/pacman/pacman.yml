@@ -16,11 +16,11 @@
 
 - name: Init pacman keyring
   action: command pacman-key --init
-  when: pacman_gpg_status.stat.exists = False
+  when: pacman_gpg_status.stat.exists == False
 
 - name: Init pacman keyring
   action: command pacman-key --populate archlinuxarm
-  when: pacman_gpg_status.stat.exists = False
+  when: pacman_gpg_status.stat.exists == False
 
 - name: Update pacman dabatase
   action: pacman update_cache=yes
