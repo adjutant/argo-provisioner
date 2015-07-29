@@ -25,4 +25,4 @@
 - name: Install ArchLinux keyrings
   action: pacman name="{{ item }}" state=latest update_cache=yes
   with_file:
-    - "{{ ansibledir }}/vars/pkg.index"
+    - "{{ ansibledir }}/config/common/base/pacman/pkg.index"
