@@ -1,0 +1,7 @@
+- name: Transfer motd-generator.sh to /opt/scripts
+  action: copy src={{ ansibledir }}/config/common/base/generic/scripts/motd-generator.sh dest=/opt/scripts/ owner=root group=root mode=0755
+  register: motd_status
+
+- name: Setup MOTD if motd-generator.sh changed
+  action: command /opt/scripts/motd-generator.sh
+  when: motd_status.changed

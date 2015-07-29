@@ -2,13 +2,13 @@
   action: group name=adjutant gid=1300 state=present
 
 - name: Create account adjutant - Account
-  action: user name=adjutant createhome=yes group=adjutant uid=1300 home=/home/adjutant shell=/bin/bash state=present
+  action: user name=adjutant createhome=yes group=adjutant groups=wheel uid=1300 home=/home/adjutant shell=/bin/bash state=present
 
 - name: Create account adjutant - SSH public keys
   action: authorized_key user=adjutant state=present key="{{ item }}"
   with_file:
     - "{{ ansibledir }}/config/common/base/users/pubkeys/adjutant-ssh.pub"
-    - "{{ ansibledir }}/config/common/base/users/pubkeys/stk-ssh.pub"
+    - "{{ ansibledir }}/config/common/base/users/pubkeys/devops-ssh.pub"
 
 - name: Create account adjutant - Set chown
   action: command chown -Rc adjutant:adjutant /home/adjutant

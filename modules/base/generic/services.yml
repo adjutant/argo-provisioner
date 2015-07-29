@@ -1,0 +1,13 @@
+- name: Ensure critical services are enabled
+  action: command systemctl enable {{ item }}
+  with_items:
+    - haveged.service
+    - iptables.service
+    - sshd.service
+
+- name: Ensure critical services are running
+  action: command systemctl start {{ item }}
+  with_items:
+    - haveged.service
+    - iptables.service
+    - sshd.service

@@ -1,4 +1,7 @@
 - name: Ensure ssh configuration is correct
+  action: copy src={{ ansibledir }}/config/common/base/ssh/ssh_config dest=/etc/ssh/ssh_config owner=root group=root mode=0644
+
+- name: Ensure sshd configuration is correct
   action: copy src={{ ansibledir }}/config/common/base/ssh/sshd_config dest=/etc/ssh/sshd_config owner=root group=root mode=0644
   notify:
      - restart ssh

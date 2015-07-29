@@ -1,20 +1,20 @@
 - name: Ensure directory /opt/local exists
-  action: file state=directory owner=operator group=devops mode=0755 path=/opt/local
+  action: file state=directory owner=operator group=adjutant mode=0755 path=/opt/local
 
 - name: Ensure directory /opt/scripts exists
-  action: file state=directory owner=operator group=devops mode=0755 path=/opt/scripts
+  action: file state=directory owner=operator group=adjutant mode=0755 path=/opt/scripts
 
 - name: Ensure directory /etc/local exists
-  action: file state=directory owner=operator group=devops mode=0755 path=/etc/local
+  action: file state=directory owner=operator group=adjutant mode=0755 path=/etc/local
 
 - name: Ensure directory /var/log/local exists
-  action: file state=directory owner=operator group=devops mode=0770 path=/var/log/operation
+  action: file state=directory owner=operator group=adjutant mode=0770 path=/var/log/local
 
-- name: Ensure directory /tmp/src exists
-  action: file state=directory owner=operator group=devops mode=0777 path=/tmp/src
+- name: Ensure directory /opt/src exists
+  action: file state=directory owner=operator group=adjutant mode=0755 path=/opt/src
 
-# - name: Ensure directory /srv/api exists
-#   action: file state=directory owner=operator group=devops mode=0755 path=/srv/api
+- name: Ensure directory /srv/api exists
+  action: file state=directory owner=operator group=adjutant mode=0755 path=/srv/api
 
-# - name: Ensure directory /mnt/database exists
-#   action: file state=directory owner=operator group=devops mode=0755 path=/mnt/database
+- name: Ensure directory /mnt/database exists
+  action: file state=directory owner=operator group=adjutant mode=0755 path=/mnt/database
