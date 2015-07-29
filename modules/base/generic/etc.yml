@@ -13,6 +13,7 @@
   action: copy src={{ ansibledir }}/config/common/base/generic/{{ item }} dest=/etc/{{ item }} owner=root group=root mode=0644
   with_items:
     - vconsole.conf
+    - fstab
     - dhcpcd.conf
     - issue
     - man_db.conf
