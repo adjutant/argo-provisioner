@@ -1,4 +1,4 @@
-archlinux-keyring archlinuxarm-keyring haveged
+archlinuxarm-keyring haveged
 
 net-tools openssh openssl iptables tcpdump mtr
 whois curl rsync traceroute wvdial ntp wget ifplugd
