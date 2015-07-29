@@ -1,2 +1,0 @@
-- name: Transfer locale configs
-  action: copy src={{ ansibledir }}/config/common/base/generic/vconsole.conf dest=/etc/ owner=root group=root mode=0644

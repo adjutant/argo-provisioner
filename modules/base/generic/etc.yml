@@ -1,0 +1,33 @@
+- name: Transfer locale configs
+  action: copy src={{ ansibledir }}/config/common/base/generic/{{ item }} dest=/etc/ owner=root group=root mode=0644
+  with_items:
+    - locale.gen
+    - locale.conf
+  register: locale_status
+
+- name: Trigger locale-gen if configuration was changed
+  action: command locale-gen
+  when: locale_status.changed
+
+- name: Transfer locale configs
+  action: copy src={{ ansibledir }}/config/common/base/generic/vconsole.conf dest=/etc/ owner=root group=root mode=0644
+
+- name: Transfer locale configs
+  action: copy src={{ ansibledir }}/config/common/base/generic/{{ item }} dest=/etc/{{ item }} owner=root group=root mode=0644
+  with_items:
+    - dhcpcd.conf
+    - issue
+    - man_db.conf
+    - nanorc
+    - pam.d/login
+    - pam.d/passwd
+    - pam.d/system-login
+    - securetty
+    - sysctl.d/10-vm-optimize.conf
+    - sysctl.d/30-tcp-ip-hardening.conf
+    - sysctl.d/50-dmesg-restrict.conf
+    - systemd/journald.conf
+    - systemd/logind.conf
+    - firewall.rules
+    - iptables/iptables.rules
+    - mkinitcpio.conf

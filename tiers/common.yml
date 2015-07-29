@@ -5,8 +5,6 @@
 
   tasks:
   - include: ../modules/base/skel/skel.yml
-  - include: ../modules/base/generic/locale.yml
-  - include: ../modules/base/generic/vconsole.yml
   - include: ../modules/base/users/adjutant.yml
   - include: ../modules/base/users/devops.yml
   - include: ../modules/base/users/operator.yml
@@ -16,6 +14,7 @@
   - include: ../modules/base/network/motd.yml
   - include: ../modules/base/network/hostname.yml
   - include: ../modules/base/pacman/pacman.yml
+  - include: ../modules/base/generic/etc.yml
   - include: ../modules/base/ssh/ssh.yml
   - include: ../modules/base/sudo/sudo.yml
 
