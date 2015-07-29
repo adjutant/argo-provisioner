@@ -1,5 +1,5 @@
 - name: Transfer locale configuration
-  action: copy src={{ ansibledir }}/config/common/base/generic/{{ item }} dest=/etc/ owner=root group=root mode=0644
+  action: copy src={{ ansibledir }}/config/common/base/generic/etc/{{ item }} dest=/etc/ owner=root group=root mode=0644
   with_items:
     - locale.gen
     - locale.conf
@@ -10,7 +10,7 @@
   when: locale_status.changed
 
 - name: Transfer etc basic configuration
-  action: copy src={{ ansibledir }}/config/common/base/generic/{{ item }} dest=/etc/{{ item }} owner=root group=root mode=0644
+  action: copy src={{ ansibledir }}/config/common/base/generic/etc/{{ item }} dest=/etc/{{ item }} owner=root group=root mode=0644
   with_items:
     - vconsole.conf
     - fstab

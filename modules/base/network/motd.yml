@@ -1,2 +1,0 @@
-- name: Setup MOTD
-  action: command /opt/scripts/motd-generator.sh

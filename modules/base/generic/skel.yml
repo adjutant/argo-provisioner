@@ -1,0 +1,10 @@
+- name: Transfer skel configuration to server
+  action: copy src={{ ansibledir }}/config/common/base/generic/skel/{{ item }} dest=/etc/skel/{{ item }} owner=root group=root
+  with_items:
+    - .bash_logout
+    - .bash_profile
+    - .bashrc
+    - .pyrc
+    - .screenrc
+    - .vim/colors/molokai.vim
+    - .vimrc

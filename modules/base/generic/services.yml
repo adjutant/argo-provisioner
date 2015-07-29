@@ -11,4 +11,3 @@
     - haveged.service
     - iptables.service
     - sshd.service
-

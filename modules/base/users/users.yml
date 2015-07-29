@@ -1,0 +1,4 @@
+---
+- include: adjutant.yml
+- include: devops.yml
+- include: operator.yml
