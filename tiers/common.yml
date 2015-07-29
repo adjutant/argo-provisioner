@@ -1,7 +1,5 @@
 ---
 - hosts: all
-  become: yes
-  become_user: root
   vars_files:
     - ../vars/common.vars.yml
 
