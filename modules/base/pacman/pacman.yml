@@ -19,8 +19,12 @@
 - name: Update pacman dabatase
   action: command pacman -Syy
 
-- name: Install ArchLinux keyrings
+- name: Install ArchLinux base packages
   action: pacman name="{{ item }}" state=latest update_cache=yes
   with_file:
     - "{{ ansibledir }}/config/common/base/pacman/packages/base"
+
+- name: Install ArchLinux cluster common packages
+  action: pacman name="{{ item }}" state=latest update_cache=yes
+  with_file:
     - "{{ ansibledir }}/config/common/base/pacman/packages/common"
