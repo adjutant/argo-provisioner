@@ -6,7 +6,6 @@ core-delta    ansible_ssh_host=10.12.1.23  ansible_connection=ssh ansible_ssh_us
 core-epsilon  ansible_ssh_host=10.12.1.24  ansible_connection=ssh ansible_ssh_user=root ansible_ssh_port=22 ansible_python_interpreter=/usr/bin/python2.7
 core-zeta     ansible_ssh_host=10.12.1.25  ansible_connection=ssh ansible_ssh_user=root ansible_ssh_port=22 ansible_python_interpreter=/usr/bin/python2.7
 core-eta      ansible_ssh_host=10.12.1.26  ansible_connection=ssh ansible_ssh_user=root ansible_ssh_port=22 ansible_python_interpreter=/usr/bin/python2.7
-
-core-theta    ansible_ssh_host=10.12.1.26  ansible_connection=ssh ansible_ssh_user=root ansible_ssh_port=22 ansible_python_interpreter=/usr/bin/python2.7
-core-iota     ansible_ssh_host=10.12.1.26  ansible_connection=ssh ansible_ssh_user=root ansible_ssh_port=22 ansible_python_interpreter=/usr/bin/python2.7
-core-kappa    ansible_ssh_host=10.12.1.26  ansible_connection=ssh ansible_ssh_user=root ansible_ssh_port=22 ansible_python_interpreter=/usr/bin/python2.7
+#core-theta   ansible_ssh_host=10.12.1.27  ansible_connection=ssh ansible_ssh_user=root ansible_ssh_port=22 ansible_python_interpreter=/usr/bin/python2.7
+#core-iota    ansible_ssh_host=10.12.1.28  ansible_connection=ssh ansible_ssh_user=root ansible_ssh_port=22 ansible_python_interpreter=/usr/bin/python2.7
+#core-kappa   ansible_ssh_host=10.12.1.29  ansible_connection=ssh ansible_ssh_user=root ansible_ssh_port=22 ansible_python_interpreter=/usr/bin/python2.7
