@@ -17,3 +17,5 @@ bash-completion most mlocate ncdu
 htop lsof sysstat ltrace strace iotop
 
 gptfdisk usb_modeswitch
+
+distcc

@@ -1,0 +1,8 @@
+- name: Ensure /etc/conf.d/distcc is correct
+  action: copy src={{ ansibledir }}/config/common/builder/distcc/distcc dest=/etc/conf.d/distcc owner=root group=root mode=0644
+
+- name: Ensure distccd service is enabled
+  action: command systemctl enable distccd.service
+
+- name: Ensure distccd service is running
+  action: command systemctl start distccd.service

@@ -1,0 +1,7 @@
+---
+- hosts: all
+  vars_files:
+    - ../vars/common.vars.yml
+
+  tasks:
+  - include: ../modules/base/pacman/pacman-full-update.yml

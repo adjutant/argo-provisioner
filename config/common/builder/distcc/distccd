@@ -1,0 +1,2 @@
+DISTCC_ARGS="--allow 10.12.1.0/24"
+
