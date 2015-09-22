@@ -1,4 +1,7 @@
-- name: Transfer skel configuration to server
+- name: Transfer skel configuration to server - Step 1
+  action: file state=directory owner=root group=root path=/etc/skel/.vim/colors/
+
+- name: Transfer skel configuration to server - Step 2
   action: copy src={{ ansibledir }}/config/common/base/generic/skel/{{ item }} dest=/etc/skel/{{ item }} owner=root group=root
   with_items:
     - .bash_logout
