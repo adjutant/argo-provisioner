@@ -13,7 +13,7 @@
     raw: mkdir -p /root/.ssh
 
   - name: Install python2.7
-    raw: pacman -Sy --noconfirm python2
+    raw: pacman -Sy --noconfirm --needed python2 screen
 
   - name: Instal SSH public keys for Ansible
     action: authorized_key user=root state=present key="{{ item }}"
