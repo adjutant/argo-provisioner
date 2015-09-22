@@ -1,0 +1,22 @@
+---
+- hosts: all
+  vars_files:
+    - ../vars/common.vars.yml
+  remote_user: alarm
+  become: yes
+  become_user: root
+  become_method: su
+  gather_facts: false
+
+  tasks:
+  - name: Create root's .ssh directory
+    raw: mkdir -p /root/.ssh
+
+  - name: Install python2.7
+    raw: pacman -Sy --noconfirm python2
+
+  - name: Instal SSH public keys for Ansible
+    action: authorized_key user=root state=present key="{{ item }}"
+    with_file:
+      - "{{ ansibledir }}/config/common/base/users/pubkeys/adjutant-ssh.pub"
+      - "{{ ansibledir }}/config/common/base/users/pubkeys/stk-ssh.pub"
