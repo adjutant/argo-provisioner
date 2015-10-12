@@ -4,6 +4,8 @@ iproute2 iputils less licenses logrotate lvm2 man-db man-pages mdadm nano
 netctl pacman pacman-mirrorlist pciutils perl procps-ng psmisc sed shadow
 sysfsutils systemd-sysvcompat tar texinfo usbutils util-linux vi which xfsprogs
 
+readline ncurses
+
 autoconf automake binutils bison fakeroot file findutils flex gawk gcc gettext grep
 groff gzip libtool m4 make pacman patch pkg-config sed sudo texinfo util-linux which
 
@@ -13,7 +15,7 @@ haveged net-tools openssh openssl iptables tcpdump mtr
 whois curl rsync traceroute wvdial ntp wget ifplugd
 
 git python2 gnupg 
-bash-completion most mlocate ncdu
+bash-completion most mlocate ncdu screen
 htop lsof sysstat ltrace strace iotop
 
 gptfdisk usb_modeswitch

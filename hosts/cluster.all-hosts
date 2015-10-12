@@ -1,16 +1,17 @@
 [all:vars]
 ansible_python_interpreter=/usr/bin/python2.7
 ansible_connection=ssh
-ansible_ssh_user=alarm
+ansible_ssh_user=root
 ansible_ssh_port=22
 
 [all]
-adjutant-01   ansible_ssh_host=10.12.1.2
-core-beta     ansible_ssh_host=10.12.1.21
-core-gamma    ansible_ssh_host=10.12.1.22
-core-delta    ansible_ssh_host=10.12.1.23
-core-epsilon  ansible_ssh_host=10.12.1.24
-core-zeta     ansible_ssh_host=10.12.1.25
-core-eta      ansible_ssh_host=10.12.1.26
-core-theta    ansible_ssh_host=10.12.1.27
-core-iota     ansible_ssh_host=10.12.1.28
+reactor-alpha  ansible_ssh_host=10.12.1.11
+reactor-beta   ansible_ssh_host=10.12.1.12
+core-beta      ansible_ssh_host=10.12.1.21
+core-gamma     ansible_ssh_host=10.12.1.22
+core-delta     ansible_ssh_host=10.12.1.23
+core-epsilon   ansible_ssh_host=10.12.1.24
+core-zeta      ansible_ssh_host=10.12.1.25
+core-eta       ansible_ssh_host=10.12.1.26
+core-theta     ansible_ssh_host=10.12.1.27
+core-iota      ansible_ssh_host=10.12.1.28

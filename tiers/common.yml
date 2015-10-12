@@ -2,6 +2,7 @@
 - hosts: all
   vars_files:
     - ../vars/common.vars.yml
+  remote_user: root
 
   tasks:
   - include: ../modules/base/pacman/pacman.yml
