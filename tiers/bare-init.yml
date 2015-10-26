@@ -48,8 +48,8 @@
   - name: Upgrade all packages
     action: command pacman -Su --noconfirm
 
-  - name: Install uboot-cubieboard2
-    action: shell yes | pacman -S uboot-cubieboard2
+#  - name: Install uboot-cubieboard2
+#    action: shell yes | pacman -S uboot-cubieboard2
 
   - name: Reboot core
     action: shell sleep 2 && reboot
