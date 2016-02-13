@@ -1,5 +1,4 @@
 Port 22
-Port 27287
 AddressFamily any
 ListenAddress 0.0.0.0
 ListenAddress ::

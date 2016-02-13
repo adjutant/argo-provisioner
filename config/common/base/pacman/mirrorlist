@@ -1,4 +1,3 @@
-Server = http://vn.mirror.archlinuxarm.org/$arch/$repo
 Server = http://mirror.archlinuxarm.org/$arch/$repo
 # Server = http://sg.mirror.archlinuxarm.org/$arch/$repo
 # Server = http://tw.mirror.archlinuxarm.org/$arch/$repo
