@@ -1,2 +1,5 @@
 - name: Update pacman dabatase
-  action: command pacman -Syu --noconfirm
+  action: command pacman -Syuw --noconfirm
+
+- name: Upgrade all
+  action: command pacman -Su --noconfirm

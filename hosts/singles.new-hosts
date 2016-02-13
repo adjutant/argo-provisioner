@@ -1,0 +1,8 @@
+[all:vars]
+ansible_python_interpreter=/usr/bin/python2.7
+ansible_connection=ssh
+ansible_ssh_user=alarm
+ansible_ssh_port=22
+
+[all]
+valkyrie        ansible_ssh_host=10.12.1.3

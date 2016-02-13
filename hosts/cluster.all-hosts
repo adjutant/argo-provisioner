@@ -15,3 +15,5 @@ core-zeta      ansible_ssh_host=10.12.1.25
 core-eta       ansible_ssh_host=10.12.1.26
 core-theta     ansible_ssh_host=10.12.1.27
 core-iota      ansible_ssh_host=10.12.1.28
+core-kappa     ansible_ssh_host=10.12.1.29
+#valkyrie      ansible_ssh_host=10.12.1.3
