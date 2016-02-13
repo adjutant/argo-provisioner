@@ -1,0 +1,13 @@
+---
+- hosts: all
+  vars_files:
+    - ../vars/common.vars.yml
+  remote_user: root
+
+  tasks:
+  - name: Reboot core
+    action: shell sleep 2 && reboot
+    async: 1
+    poll: 0
+    ignore_errors: true
+

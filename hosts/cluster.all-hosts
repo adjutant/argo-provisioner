@@ -1,17 +1,25 @@
+[all:vars]
+ansible_python_interpreter=/usr/bin/python2.7
+ansible_connection=ssh
+ansible_ssh_user=root
+ansible_ssh_port=22
+
 [all]
-arm-unit-beta    ansible_ssh_host=10.10.0.12  ansible_connection=ssh ansible_ssh_user=root ansible_ssh_port=22 ansible_python_interpreter=/usr/bin/python2.7
-arm-unit-gamma   ansible_ssh_host=10.10.0.13  ansible_connection=ssh ansible_ssh_user=root ansible_ssh_port=22 ansible_python_interpreter=/usr/bin/python2.7
-arm-unit-delta   ansible_ssh_host=10.10.0.14  ansible_connection=ssh ansible_ssh_user=root ansible_ssh_port=22 ansible_python_interpreter=/usr/bin/python2.7
-arm-unit-epsilon ansible_ssh_host=10.10.0.15  ansible_connection=ssh ansible_ssh_user=root ansible_ssh_port=22 ansible_python_interpreter=/usr/bin/python2.7
-arm-unit-zeta    ansible_ssh_host=10.10.0.16  ansible_connection=ssh ansible_ssh_user=root ansible_ssh_port=22 ansible_python_interpreter=/usr/bin/python2.7
-arm-unit-eta     ansible_ssh_host=10.10.0.17  ansible_connection=ssh ansible_ssh_user=root ansible_ssh_port=22 ansible_python_interpreter=/usr/bin/python2.7
-arm-unit-theta   ansible_ssh_host=10.10.0.18  ansible_connection=ssh ansible_ssh_user=root ansible_ssh_port=22 ansible_python_interpreter=/usr/bin/python2.7
-arm-unit-iota    ansible_ssh_host=10.10.0.19  ansible_connection=ssh ansible_ssh_user=root ansible_ssh_port=22 ansible_python_interpreter=/usr/bin/python2.7
-arm-unit-kappa   ansible_ssh_host=10.10.0.20  ansible_connection=ssh ansible_ssh_user=root ansible_ssh_port=22 ansible_python_interpreter=/usr/bin/python2.7
-arm-unit-lambda  ansible_ssh_host=10.10.0.21  ansible_connection=ssh ansible_ssh_user=root ansible_ssh_port=22 ansible_python_interpreter=/usr/bin/python2.7
-arm-unit-mu      ansible_ssh_host=10.10.0.22  ansible_connection=ssh ansible_ssh_user=root ansible_ssh_port=22 ansible_python_interpreter=/usr/bin/python2.7
-arm-unit-nu      ansible_ssh_host=10.10.0.23  ansible_connection=ssh ansible_ssh_user=root ansible_ssh_port=22 ansible_python_interpreter=/usr/bin/python2.7
-arm-unit-xi      ansible_ssh_host=10.10.0.24  ansible_connection=ssh ansible_ssh_user=root ansible_ssh_port=22 ansible_python_interpreter=/usr/bin/python2.7
-arm-unit-omicron ansible_ssh_host=10.10.0.25  ansible_connection=ssh ansible_ssh_user=root ansible_ssh_port=22 ansible_python_interpreter=/usr/bin/python2.7
-arm-unit-pi      ansible_ssh_host=10.10.0.26  ansible_connection=ssh ansible_ssh_user=root ansible_ssh_port=22 ansible_python_interpreter=/usr/bin/python2.7
-arm-unit-rho     ansible_ssh_host=10.10.0.27  ansible_connection=ssh ansible_ssh_user=root ansible_ssh_port=22 ansible_python_interpreter=/usr/bin/python2.7
+## core-alpha is the master node that runs Ansible,
+## herefore better commented out.
+# core-alpha   ansible_ssh_host=10.10.0.11
+core-beta      ansible_ssh_host=10.10.0.12
+core-gamma     ansible_ssh_host=10.10.0.13
+core-delta     ansible_ssh_host=10.10.0.14
+core-epsilon   ansible_ssh_host=10.10.0.15
+core-zeta      ansible_ssh_host=10.10.0.16
+core-eta       ansible_ssh_host=10.10.0.17
+core-theta     ansible_ssh_host=10.10.0.18
+core-iota      ansible_ssh_host=10.10.0.19
+core-kappa     ansible_ssh_host=10.10.0.20
+core-lambda    ansible_ssh_host=10.10.0.21
+core-mu        ansible_ssh_host=10.10.0.22
+core-nu        ansible_ssh_host=10.10.0.23
+core-xi        ansible_ssh_host=10.10.0.24
+core-omicron   ansible_ssh_host=10.10.0.25
+core-pi        ansible_ssh_host=10.10.0.26

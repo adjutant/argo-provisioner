@@ -11,7 +11,7 @@
   action: file state=directory owner=operator group=adjutant mode=0770 path=/var/log/local
 
 - name: Ensure directory /opt/src exists
-  action: file state=directory owner=operator group=adjutant mode=0755 path=/opt/src
+  action: file state=directory owner=operator group=adjutant mode=0777 path=/opt/src
 
 - name: Ensure directory /srv/api exists
   action: file state=directory owner=operator group=adjutant mode=0755 path=/srv/api

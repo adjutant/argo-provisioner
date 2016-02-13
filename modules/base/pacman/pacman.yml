@@ -4,8 +4,11 @@
 - name: Ensure /etc/pacman.d/mirrorlist is correct
   action: copy src={{ ansibledir }}/config/common/base/pacman/mirrorlist dest=/etc/pacman.d/mirrorlist owner=root group=root mode=0644
 
+- name: Update pacman dabatase
+  action: command pacman -Syy
+
 - name: Install ArchLinux keyrings
-  action: pacman name=archlinuxarm-keyring state=latest update_cache=yes
+  action: pacman name=archlinuxarm-keyring state=latest
 
 - name: Check for pacman.d/gnupg's existence
   action: stat path=/etc/pacman.d/gnupg/private-keys-v1.d
@@ -22,10 +25,7 @@
   action: command pacman-key --populate archlinuxarm
   when: pacman_gpg_status.stat.exists == False
 
-- name: Update pacman dabatase
-  action: pacman update_cache=yes
-
 - name: Install ArchLinux base packages
-  action: pacman name="{{ item }}" state=latest update_cache=yes
+  action: pacman name="{{ item }}" state=present
   with_file:
     - "{{ ansibledir }}/config/common/base/pacman/packages/base"

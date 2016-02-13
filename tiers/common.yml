@@ -2,8 +2,10 @@
 - hosts: all
   vars_files:
     - ../vars/common.vars.yml
+  remote_user: root
 
   tasks:
+  - include: ../modules/base/pacman/pacman.yml
   - include: ../modules/base/generic/skel.yml
   - include: ../modules/base/users/users.yml
   - include: ../modules/base/generic/swap.yml
@@ -13,7 +15,6 @@
   - include: ../modules/base/generic/motd.yml
   - include: ../modules/base/generic/etc.yml
   - include: ../modules/base/network/hostname.yml
-  - include: ../modules/base/pacman/pacman.yml
   - include: ../modules/base/generic/services.yml
   - include: ../modules/base/ssh/ssh.yml
   - include: ../modules/base/sudo/sudo.yml

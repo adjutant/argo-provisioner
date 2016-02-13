@@ -16,4 +16,5 @@
 -A INPUT -j REJECT --reject-with icmp-proto-unreachable
 -A SWARM-TCP -s 0.0.0.0/0 -p tcp -m tcp --dport 22    -m comment --comment "SSH" -j ACCEPT
 -A SWARM-TCP -s 0.0.0.0/0 -p tcp -m tcp --dport 27287 -m comment --comment "SSH" -j ACCEPT
+-A SWARM-TCP -s 0.0.0.0/0 -p tcp -m tcp --dport 3632  -m comment --comment "DISTCC" -j ACCEPT
 COMMIT

@@ -1,0 +1,11 @@
+---
+- hosts: all
+  vars_files:
+    - ../vars/common.vars.yml
+
+  tasks:
+  - name: Update pacman dabatase
+    action: command pacman -Sy
+
+  - name: Install uboot-cubieboard2
+    action: shell yes | pacman -S uboot-cubieboard2
