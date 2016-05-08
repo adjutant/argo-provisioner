@@ -1,2 +1,2 @@
 ---
-ansibledir: /opt/local/provisioner-archarm-cluster
+ansibledir: /opt/local/argo-provisioner
