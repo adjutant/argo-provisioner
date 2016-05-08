@@ -7,19 +7,17 @@ ansible_ssh_port=22
 [all]
 ## core-alpha is the master node that runs Ansible,
 ## herefore better commented out.
-# core-alpha   ansible_ssh_host=10.10.0.11
-core-beta      ansible_ssh_host=10.10.0.12
-core-gamma     ansible_ssh_host=10.10.0.13
-core-delta     ansible_ssh_host=10.10.0.14
-core-epsilon   ansible_ssh_host=10.10.0.15
-core-zeta      ansible_ssh_host=10.10.0.16
-core-eta       ansible_ssh_host=10.10.0.17
-core-theta     ansible_ssh_host=10.10.0.18
-core-iota      ansible_ssh_host=10.10.0.19
-core-kappa     ansible_ssh_host=10.10.0.20
-core-lambda    ansible_ssh_host=10.10.0.21
-core-mu        ansible_ssh_host=10.10.0.22
-core-nu        ansible_ssh_host=10.10.0.23
-core-xi        ansible_ssh_host=10.10.0.24
-core-omicron   ansible_ssh_host=10.10.0.25
-core-pi        ansible_ssh_host=10.10.0.26
+# core-alpha     ansible_ssh_host=10.12.1.11
+reactor-alpha    ansible_ssh_host=10.12.1.21
+reactor-beta     ansible_ssh_host=10.12.1.22
+reactor-gamma    ansible_ssh_host=10.12.1.23
+reactor-delta    ansible_ssh_host=10.12.1.24
+core-beta        ansible_ssh_host=10.12.1.12
+core-gamma       ansible_ssh_host=10.12.1.13
+core-delta       ansible_ssh_host=10.12.1.14
+core-epsilon     ansible_ssh_host=10.12.1.15
+core-zeta        ansible_ssh_host=10.12.1.16
+core-eta         ansible_ssh_host=10.12.1.17
+core-theta       ansible_ssh_host=10.12.1.18
+core-iota        ansible_ssh_host=10.12.1.19
+core-kappa       ansible_ssh_host=10.12.1.20

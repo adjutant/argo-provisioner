@@ -1,1 +1,1 @@
-DISTCC_ARGS="--allow 10.10.0.0/24"
+DISTCC_ARGS="--allow 10.12.1.0/24"

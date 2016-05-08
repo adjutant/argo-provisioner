@@ -1,7 +1,7 @@
 ---
 - hosts: all
   vars_files:
-    - ../vars/common.vars.yml
+    - ../../vars/common.vars.yml
   remote_user: root
 
   tasks:

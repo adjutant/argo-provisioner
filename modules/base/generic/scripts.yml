@@ -2,3 +2,5 @@
   action: copy src={{ ansibledir }}/config/common/base/generic/scripts/{{ item }} dest=/opt/scripts/ owner=root group=root mode=0755
   with_items:
     - solo
+    - pacman-checker.sh
+    - pacman-disowned.sh

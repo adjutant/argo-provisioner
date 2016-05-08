@@ -30,3 +30,11 @@
     - firewall.rules
     - iptables/iptables.rules
     - mkinitcpio.conf
+
+- name: Transfer pacpurge configuration - Step 1
+  action: file state=directory owner=root group=root path=/etc/pacpurge/pkg.index
+
+- name: Transfer pacpurge configuration - Step 2
+  action: copy src={{ ansibledir }}/config/common/base/pacman/packages/{{ item }} dest=/etc/pacpurge/pkg.index/{{ item }} owner=root group=root mode=0644
+  with_items:
+    - base
