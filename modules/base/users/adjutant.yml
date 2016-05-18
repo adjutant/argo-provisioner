@@ -7,8 +7,8 @@
 - name: Create account adjutant - SSH public keys
   action: authorized_key user=adjutant state=present key="{{ item }}"
   with_file:
-    - "{{ ansibledir }}/config/common/base/users/pubkeys/adjutant-ssh.pub"
-    - "{{ ansibledir }}/config/common/base/users/pubkeys/devops-ssh.pub"
+    - "{{ ansibledir }}/config/ssh-pubkeys/adjutant-ssh.pub"
+    - "{{ ansibledir }}/config/ssh-pubkeys/devops-ssh.pub"
 
 - name: Create account adjutant - Set chown
   action: command chown -Rc adjutant:adjutant /home/adjutant

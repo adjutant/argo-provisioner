@@ -7,7 +7,7 @@
 - name: Create account devops - SSH public keys
   action: authorized_key user=devops state=present key="{{ item }}"
   with_file:
-    - "{{ ansibledir }}/config/common/base/users/pubkeys/devops-ssh.pub"
+    - "{{ ansibledir }}/config/ssh-pubkeys/devops-ssh.pub"
 
 - name: Create account devops - Set chown
   action: command chown -Rc devops:devops /home/devops
