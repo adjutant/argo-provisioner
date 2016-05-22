@@ -7,8 +7,8 @@
 - name: Create account operator - SSH public keys
   action: authorized_key user=operator state=present key="{{ item }}"
   with_file:
-    - "{{ ansibledir }}/config/ssh-pubkeys/adjutant-ssh.pub"
     - "{{ ansibledir }}/config/ssh-pubkeys/exmachina-ssh.pub"
+    - "{{ ansibledir }}/config/ssh-pubkeys/operator-ssh.pub"
 
 - name: Create account operator - Set chown
   action: command chown -Rc operator:operator /home/operator
