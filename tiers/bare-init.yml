@@ -12,11 +12,10 @@
   - name: Install python2.7
     raw: pacman -Sy --noconfirm --needed python2
 
-  - name: Instal SSH public keys for Ansible
+  - name: Install SSH public keys for Ansible
     action: authorized_key user=root state=present key="{{ item }}"
     with_file:
-      - "{{ ansibledir }}/config/common/base/users/pubkeys/adjutant-ssh.pub"
-      - "{{ ansibledir }}/config/common/base/users/pubkeys/stk-ssh.pub"
+      - "{{ ansibledir }}/config/ssh-pubkeys/exmachina-ssh.pub"
 
   - name: Ensure /etc/pacman.d/localmirror is correct
     action: copy src={{ ansibledir }}/config/common/base/pacman/localmirror dest=/etc/pacman.d/localmirror owner=root group=root mode=0644
