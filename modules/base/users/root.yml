@@ -1,0 +1,5 @@
+- name: Install SSH public keys for root
+  action: authorized_key user=root state=present key="{{ item }}"
+  with_file:
+    - "{{ ansibledir }}/config/ssh-pubkeys/exmachina-ssh.pub"
+
