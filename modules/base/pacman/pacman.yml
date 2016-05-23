@@ -24,8 +24,3 @@
 - name: Init pacman keyring
   action: command pacman-key --populate archlinuxarm
   when: pacman_gpg_status.stat.exists == False
-
-- name: Install ArchLinux base packages
-  action: pacman name="{{ item }}" state=present
-  with_file:
-    - "{{ ansibledir }}/config/common/base/pacman/packages/base"
