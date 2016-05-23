@@ -8,8 +8,21 @@
 <br>
 <br>
 
-**Start a build**
+**Init new individual units**
 ```bash
-$ ansible-playbook -i hosts/cluster.all-hosts -k --ask-become-pass tiers/bare-init.yml
-$ ansible-playbook -i hosts/cluster.all-hosts tiers/common.yml
+$ ansible-playbook -i hosts/singles.new-hosts -k --ask-become-pass tiers/bare-init.yml
 ```
+
+**Trigger common build for all hosts, after bare-init**
+```bash
+$ ansible-playbook -i hosts/cluster.all-hosts -e "host_groups=slaves" tiers/common.yml
+```
++ host_groups=all
++ host_groups=masters
++ host_groups=slaves
++ host_groups=xu4
++ host_groups=rpi2
++ host_groups=cubieboard2
+
+
+
