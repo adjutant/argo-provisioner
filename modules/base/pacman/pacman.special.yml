@@ -1,3 +1,3 @@
 - name: Install uboot-cubieboard2
   action: shell yes | pacman -Syu uboot-cubieboard2
-  when: board_model == cubieboard2
+  when: board_model == "cubieboard2"
