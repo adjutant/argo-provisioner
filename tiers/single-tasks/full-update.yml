@@ -1,7 +1,9 @@
 ---
-- hosts: all
+- hosts: "{{ hosts_group }}"
   vars_files:
     - ../../vars/common.vars.yml
+  become: yes
+  become_method: sudo
 
   tasks:
   - include: ../../modules/base/pacman/pacman.special.yml
