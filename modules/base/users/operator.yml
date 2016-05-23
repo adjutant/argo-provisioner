@@ -5,10 +5,9 @@
   action: user name=operator createhome=yes group=operator uid=1302 home=/home/operator shell=/bin/bash state=present
 
 - name: Create account operator - SSH public keys
-  action: authorized_key user=operator state=present key="{{ item }}"
+  action: authorized_key user=operator state=present key="{{ item }}" exclusive=yes
   with_file:
-    - "{{ ansibledir }}/config/ssh-pubkeys/exmachina-ssh.pub"
-    - "{{ ansibledir }}/config/ssh-pubkeys/operator-ssh.pub"
+    - "{{ ansibledir }}/config/authorized_keys/operator"
 
 - name: Create account operator - Set chown
   action: command chown -Rc operator:operator /home/operator

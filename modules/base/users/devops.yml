@@ -5,9 +5,9 @@
   action: user name=devops createhome=yes group=devops uid=1301 home=/home/devops shell=/bin/bash state=present
 
 - name: Create account devops - SSH public keys
-  action: authorized_key user=devops state=present key="{{ item }}"
+  action: authorized_key user=devops state=present key="{{ item }}" exclusive=yes
   with_file:
-    - "{{ ansibledir }}/config/ssh-pubkeys/devops-ssh.pub"
+    - "{{ ansibledir }}/config/authorized_keys/devops"
 
 - name: Create account devops - Set chown
   action: command chown -Rc devops:devops /home/devops
