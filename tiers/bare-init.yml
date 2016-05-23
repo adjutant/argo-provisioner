@@ -12,46 +12,10 @@
   - name: Install python2.7
     raw: pacman -Sy --noconfirm --needed python2
 
-  - name: Install SSH public keys for Ansible
-    action: authorized_key user=root state=present key="{{ item }}"
-    with_file:
-      - "{{ ansibledir }}/config/ssh-pubkeys/exmachina-ssh.pub"
-
-  - name: Ensure /etc/pacman.d/localmirror is correct
-    action: copy src={{ ansibledir }}/config/common/base/pacman/localmirror dest=/etc/pacman.d/localmirror owner=root group=root mode=0644
-
-  - name: Ensure /etc/pacman.d/mirrorlist is correct
-    action: copy src={{ ansibledir }}/config/common/base/pacman/mirrorlist dest=/etc/pacman.d/mirrorlist owner=root group=root mode=0644
-
-  - name: Update pacman dabatase
-    action: command pacman -Sy
-
-  - name: Install ArchLinux keyrings
-    action: pacman name=archlinuxarm-keyring state=latest
-
-  - name: Check for pacman.d/gnupg's existence
-    action: stat path=/etc/pacman.d/gnupg/private-keys-v1.d
-    register: pacman_gpg_status
-
-  - name: Ensure /etc/pacman.conf is correct
-    action: copy src={{ ansibledir }}/config/common/base/pacman/pacman.conf dest=/etc/pacman.conf owner=root group=root mode=0644
-
-  - name: Init pacman keyring
-    action: command pacman-key --init
-    when: pacman_gpg_status.stat.exists == False
-
-  - name: Init pacman keyring
-    action: command pacman-key --populate archlinuxarm
-    when: pacman_gpg_status.stat.exists == False
-
-  - name: Upgrade all packages
-    action: command pacman -Su --noconfirm
-
-#  - name: Install uboot-cubieboard2
-#    action: shell yes | pacman -S uboot-cubieboard2
-
-  - name: Reboot core
-    action: shell sleep 2 && reboot
-    async: 1
-    poll: 0
-    ignore_errors: true
+  - include: ../modules/base/generic/skel.yml
+  - include: ../modules/base/users/users.yml
+  - include: ../modules/base/ssh/ssh.yml
+  - include: ../modules/base/sudo/sudo.yml
+  - include: ../modules/base/pacman/pacman.yml
+  - include: ../modules/base/pacman/pacman.special.yml
+  - include: ../modules/base/pacman/pacman.full-update.yml
