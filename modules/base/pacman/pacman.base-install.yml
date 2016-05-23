@@ -6,4 +6,4 @@
 - name: Install ArchLinux board-specific packages
   action: pacman name="{{ item }}" state=present
   with_file:
-    - "{{ ansibledir }}/config/common/base/pacman/packages/core.{{ board_name }}"
+    - "{{ ansibledir }}/config/common/base/pacman/packages/core.{{ board_model }}"
