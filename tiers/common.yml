@@ -1,5 +1,5 @@
 ---
-- hosts: {{ hosts_group }}
+- hosts: "{{ hosts_group }}"
   vars_files:
     - ../vars/common.vars.yml
   remote_user: root

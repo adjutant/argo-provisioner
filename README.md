@@ -15,7 +15,7 @@ $ ansible-playbook -i hosts/singles.new-hosts -k --ask-become-pass tiers/bare-in
 
 **Trigger common build for all hosts, after bare-init**
 ```bash
-$ ansible-playbook -i hosts/cluster.all-hosts -e "host_groups=slaves" tiers/common.yml
+$ ansible-playbook -i hosts/cluster.all-hosts -e "hosts_group=slaves" tiers/common.yml
 ```
 + host_groups=all
 + host_groups=masters
@@ -23,6 +23,3 @@ $ ansible-playbook -i hosts/cluster.all-hosts -e "host_groups=slaves" tiers/comm
 + host_groups=xu4
 + host_groups=rpi2
 + host_groups=cubieboard2
-
-
-
