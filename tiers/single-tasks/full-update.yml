@@ -4,4 +4,5 @@
     - ../../vars/common.vars.yml
 
   tasks:
-  - include: ../../modules/base/pacman/pacman-full-update.yml
+  - include: ../../modules/base/pacman/pacman.special.yml
+  - include: ../../modules/base/pacman/pacman.full-update.yml
