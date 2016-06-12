@@ -12,6 +12,12 @@
   - name: Install python2.7
     raw: pacman -Sy --noconfirm --needed python2
 
+  - name: Install screen (workaround for /etc/skel/.screenrc)
+    raw: pacman -S --noconfirm --needed screen
+
+  - name: Install sudo
+    raw: pacman -S --noconfirm --needed sudo
+
   - include: ../modules/base/generic/skel.yml
   - include: ../modules/base/users/users.yml
   - include: ../modules/base/ssh/ssh.yml
