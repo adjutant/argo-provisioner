@@ -1,0 +1,2 @@
+- name: Pacman reinstall everything
+  action: shell if [[ $(pacman -Qmq) ]]; then yes | pacman -Sy $(pacman -Qq | grep -v "$(pacman -Qmq)"); else yes | pacman -Sy $(pacman -Qq); fi

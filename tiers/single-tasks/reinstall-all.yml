@@ -1,0 +1,10 @@
+---
+- hosts: "{{ hosts_group }}"
+  vars_files:
+    - ../../vars/common.vars.yml
+  become: yes
+  become_method: sudo
+
+  tasks:
+  - include: ../../modules/base/pacman/pacman.reinstall-all.yml
+  - include: ../../modules/base/pacman/pacman.cleanup.yml
