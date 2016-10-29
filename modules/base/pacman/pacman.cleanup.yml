@@ -1,0 +1,2 @@
+- name: Clean pacman cache
+  action: shell yes | pacman -Scc

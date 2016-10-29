@@ -21,6 +21,7 @@
   - include: ../modules/base/generic/etc.yml
   - include: ../modules/base/network/hostname.yml
   - include: ../modules/base/generic/services.yml
+  - include: ../modules/base/pacman/pacman.cleanup.yml
 
   handlers:
   - include: ../modules/base/ssh/ssh.handlers.yml
