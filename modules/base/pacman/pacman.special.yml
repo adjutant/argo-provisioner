@@ -1,3 +1,7 @@
 - name: Install uboot-cubieboard2
-  action: shell yes | pacman -Syu --needed uboot-cubieboard2
+  action: shell yes | pacman -Sy --needed uboot-cubieboard2
   when: board_model == "cubieboard2"
+
+- name: Install uboot-odroid-xu3
+  action: shell yes | pacman -Sy --needed uboot-odroid-xu3
+  when: board_model == "xu4"

@@ -1,7 +1,10 @@
 # argo-provisioner specific
 .venv/
-config/ssh-pubkeys/adjutant-ssh.pub
-config/ssh-pubkeys/devops-ssh.pub
+config/authorized_keys/adjutant
+config/authorized_keys/devops
+config/authorized_keys/operator
+config/authorized_keys/root
+
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

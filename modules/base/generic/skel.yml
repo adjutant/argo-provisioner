@@ -10,4 +10,5 @@
     - .pyrc
     - .screenrc
     - .vim/colors/molokai.vim
+    - .vim/colors/solarized.vim
     - .vimrc
