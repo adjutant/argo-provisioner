@@ -1,28 +1,28 @@
 [all:vars]
 ansible_python_interpreter=/usr/bin/python2.7
 ansible_connection=ssh
-ansible_ssh_user=alarm
+ansible_ssh_user=adjutant
 ansible_ssh_port=22
 ansible_ssh_private_key_file=/home/adjutant/.ssh/exmachina-id_ed25519
 
-[masters]
-## core-alpha is the master node that runs Ansible,
-## herefore better commented out.
-# core-alpha     ansible_ssh_host=10.12.1.11 board_model=cubieboard2
 
-[xu4]
-reactor-alpha    ansible_ssh_host=10.12.1.21
-reactor-beta     ansible_ssh_host=10.12.1.22
-reactor-gamma    ansible_ssh_host=10.12.1.23
-reactor-delta    ansible_ssh_host=10.12.1.24
+[singles]
+#reactor-alpha   ansible_ssh_host=10.12.1.21  board_model=xu4
+#reactor-beta    ansible_ssh_host=10.12.1.22  board_model=xu4
+#reactor-gamma   ansible_ssh_host=10.12.1.23  board_model=xu4
+#reactor-delta   ansible_ssh_host=10.12.1.24  board_model=xu4
 
-[xu4:vars]
-board_model=xu4
+#core-alpha      ansible_ssh_host=10.12.1.11  board_model=cubieboard2
+#core-beta       ansible_ssh_host=10.12.1.12  board_model=cubieboard2
+#core-gamma      ansible_ssh_host=10.12.1.13  board_model=cubieboard2
+#core-delta      ansible_ssh_host=10.12.1.14  board_model=cubieboard2
 
-## Groups 
-[slaves:children]
-xu4
+#core-epsilon    ansible_ssh_host=10.12.1.15  board_model=cubieboard2
+#core-zeta       ansible_ssh_host=10.12.1.16  board_model=cubieboard2
+#core-eta        ansible_ssh_host=10.12.1.17  board_model=cubieboard2
+#core-theta      ansible_ssh_host=10.12.1.18  board_model=cubieboard2
 
-[cluster:children]
-masters
-slaves
+#eir             ansible_ssh_host=10.12.1.51  board_model=rpi2
+#geiravor        ansible_ssh_host=10.12.1.52  board_model=cubieboard2
+
+#hellhound       ansible_ssh_host=10.11.1.13  board_model=cubieboard2

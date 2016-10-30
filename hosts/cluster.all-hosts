@@ -5,50 +5,81 @@ ansible_ssh_user=adjutant
 ansible_ssh_port=22
 ansible_ssh_private_key_file=/home/adjutant/.ssh/exmachina-id_ed25519
 
+
+#### Master nodes
+####
 [masters]
 ## core-alpha is the master node that runs Ansible,
 ## herefore better commented out.
-# core-alpha     ansible_ssh_host=10.12.1.11 board_model=cubieboard2
+#core-alpha        ansible_ssh_host=10.12.1.11 board_model=cubieboard2
+####
+####
 
 
+#### Slaves nodes
+####
 [xu4]
-reactor-alpha    ansible_ssh_host=10.12.1.21
-reactor-beta     ansible_ssh_host=10.12.1.22
-reactor-gamma    ansible_ssh_host=10.12.1.23
-reactor-delta    ansible_ssh_host=10.12.1.24
+reactor-alpha      ansible_ssh_host=10.12.1.21
+reactor-beta       ansible_ssh_host=10.12.1.22
+reactor-gamma      ansible_ssh_host=10.12.1.23
+reactor-delta      ansible_ssh_host=10.12.1.24
 
 [xu4:vars]
 board_model=xu4
 
 
-[rpi2]
-valkyrie         ansible_ssh_host=10.12.1.51
-
-[rpi2:vars]
-board_model=rpi2
-
-
 [cubieboard2]
-core-beta        ansible_ssh_host=10.12.1.12
-core-gamma       ansible_ssh_host=10.12.1.13
-core-delta       ansible_ssh_host=10.12.1.14
-core-epsilon     ansible_ssh_host=10.12.1.15
-core-zeta        ansible_ssh_host=10.12.1.16
-core-eta         ansible_ssh_host=10.12.1.17
-core-theta       ansible_ssh_host=10.12.1.18
-#core-iota        ansible_ssh_host=10.12.1.19
-#core-kappa       ansible_ssh_host=10.12.1.20
+core-beta          ansible_ssh_host=10.12.1.12
+core-gamma         ansible_ssh_host=10.12.1.13
+core-delta         ansible_ssh_host=10.12.1.14
+core-epsilon       ansible_ssh_host=10.12.1.15
+core-zeta          ansible_ssh_host=10.12.1.16
+core-eta           ansible_ssh_host=10.12.1.17
+core-theta         ansible_ssh_host=10.12.1.18
+
 
 [cubieboard2:vars]
 board_model=cubieboard2
 
 
-## Groups 
+[rpi1]
+#place_holder      ansible_ssh_host=ip_goes_here
+
+[rpi1:vars]
+board_model=rpi1
+
+
+[rpi2]
+#place_holder      ansible_ssh_host=ip_goes_here
+
+[rpi2:vars]
+board_model=rpi2
+
+
 [slaves:children]
 xu4
-rpi2
 cubieboard2
+rpi1
+rpi2
+####
+####
 
+
+#### Asset nodes
+####
+[assets]
+eir             ansible_ssh_host=10.12.1.51 board_model=rpi2
+geiravor        ansible_ssh_host=10.12.1.52 board_model=cubieboard2
+hellhound       ansible_ssh_host=10.11.1.13 board_model=cubieboard2
+####
+####
+
+
+#### Cluster
+####
 [cluster:children]
 masters
 slaves
+assets
+####
+####
