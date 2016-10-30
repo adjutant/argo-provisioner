@@ -19,6 +19,7 @@
   - include: ../modules/base/generic/clock.yml
   - include: ../modules/base/generic/motd.yml
   - include: ../modules/base/generic/etc.yml
+  - include: ../modules/base/generic/etc.special.yml
   - include: ../modules/base/network/hostname.yml
   - include: ../modules/base/generic/services.yml
   - include: ../modules/base/pacman/pacman.cleanup.yml

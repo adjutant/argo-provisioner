@@ -1,0 +1,14 @@
+- name: Transfer hosts-differentiated etc configuration
+  action: copy src={{ ansibledir }}/config/common/base/generic/etc.special/{{ item }}.{{ board_model }} dest=/etc/{{ item }} owner=root group=root mode=0644
+  with_items:
+    - fstab
+  when: (board_model == "xu4") or
+        (board_model == "cubieboard2") or
+        (board_model == "rpi1") or
+        (board_model == "rpi2")
+
+- name: Transfer generic hosts-differentiated etc configuration
+  action: copy src={{ ansibledir }}/config/common/base/generic/etc.special/{{ item }} dest=/etc/{{ item }} owner=root group=root mode=0644
+  with_items:
+    - fstab
+  when: board_model == "generic"
